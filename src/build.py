@@ -41,11 +41,11 @@ def callbtn(label='Agende uma conversa', href=AGENDA, extra=''):
     return (f'<a class="btn call" {extra}href="{href}"><span class="av"><img src="{AVATAR}" alt="" width="42" height="42"><i></i></span>'
             f'<span class="lbl">{label}</span></a>')
 
-NAV = [('para-empresarios', 'Para empresários'), ('casos', 'Casos de sucesso'), ('quem-somos', 'Quem somos'), ('perguntas-frequentes', 'Perguntas frequentes')]
+NAV = [('para-empresarios', 'Para empresários'), ('casos', 'Casos'), ('quem-somos', 'Quem somos'), ('perguntas-frequentes', 'Perguntas frequentes'), ('contato', 'Contato')]
 
 def header(active):
     nav = ''.join(f'<a href="{k}.html"{" class=\"on\" aria-current=\"page\"" if k == active else ""}>{v}</a>' for k, v in NAV)
-    nav += '<a href="seja-conselheiro.html" class="mob">Seja um conselheiro</a><a href="jornada-equity.html" class="mob">Jornada Equity</a><a href="contato.html" class="mob">Contato</a>'
+    nav += '<a href="seja-conselheiro.html" class="mob">Seja um conselheiro</a><a href="jornada-equity.html" class="mob">Jornada Equity</a>'
     return f'''<div class="mast" id="top">
 <div class="util">
   <div class="wrap">
@@ -84,7 +84,7 @@ def footer():
       </div>
       <div><h4>Empresários</h4><ul><li><a href="para-empresarios.html">Para empresários</a></li><li><a href="casos.html">Casos de sucesso</a></li><li><a href="perguntas-frequentes.html">Perguntas frequentes</a></li><li><a href="{AGENDA}">Agende uma conversa</a></li></ul></div>
       <div><h4>Spinfy.co</h4><ul><li><a href="quem-somos.html">Quem somos</a></li><li><a href="seja-conselheiro.html">Seja um conselheiro</a></li><li><a href="jornada-equity.html">Jornada Equity</a></li><li><a href="https://spinfy.app.br">Acesso restrito</a></li></ul></div>
-      <div><h4>Contato</h4><ul><li><a href="tel:+554130218343">(41) 3021-8343</a></li><li><a href="mailto:service@spinfy.co">service@spinfy.co</a></li><li>Rua Ébano Pereira, 60, 21º andar</li><li>Centro, Curitiba/PR, 80410-250</li></ul></div>
+      <div><h4><a href="contato.html" style="color:inherit;text-decoration:none">Contato</a></h4><ul><li><a href="tel:+554130218343">(41) 3021-8343</a></li><li><a href="mailto:service@spinfy.co">service@spinfy.co</a></li><li>Rua Ébano Pereira, 60, 21º andar</li><li>Centro, Curitiba/PR, 80410-250</li></ul></div>
     </div>
     <div class="foot-b"><span>© 2026 Spinfy.co. Todos os direitos reservados.</span><span class="kroma">Feito com {rd('_heart.html')} por <a href="https://agenciakroma.com.br/" target="_blank" rel="noopener">Agência KROMA</a></span></div>
   </div>
