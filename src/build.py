@@ -95,6 +95,7 @@ def footer():
 '''
 
 def head(title, desc):
+    VER = globals()['VER']
     return f'''<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -105,7 +106,7 @@ def head(title, desc):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@400;500;600&family=Unbounded:wght@500;700;800&display=swap">
-<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/site.css?v={VER}">
 <script type="application/ld+json">
 {{"@context":"https://schema.org","@type":"Organization","name":"Spinfy.co","url":"https://spinfy.co","email":"service@spinfy.co","telephone":"+55-41-3021-8343","foundingDate":"2015","address":{{"@type":"PostalAddress","streetAddress":"Rua Ébano Pereira, 60, Andar 21, Centro","addressLocality":"Curitiba","addressRegion":"PR","postalCode":"80410-250","addressCountry":"BR"}},"description":"Conselho entre pares para empresários de médias empresas. Sistema 7SS, aconselhamento, captação e M&A."}}
 </script>
@@ -179,6 +180,9 @@ PAGES = [
 ]
 
 def build():
+    import hashlib
+    global VER
+    VER = hashlib.md5((ROOT/'css/site.css').read_bytes()+(ROOT/'js/site.js').read_bytes()).hexdigest()[:8]
     CTX.update(call=callbtn(), call_hero=callbtn(extra='data-hero-cta '), wa=WA, agenda=AGENDA,
                mark=rd('_mark.html'), markcolor=rd('_markcolor.html'))
     import importlib.util
@@ -186,7 +190,7 @@ def build():
     content = importlib.util.module_from_spec(spec); spec.loader.exec_module(content)
     for slug, title, desc, active in PAGES:
         body = rd(f'pages/{slug}.html') if slug == 'index' else content.PAGE[slug](globals())
-        html = head(title, desc) + '\n' + header(active) + '\n<main>\n' + render(body) + '\n</main>\n\n' + footer() + '\n<script src="js/site.js"></script>\n</body>\n</html>\n'
+        html = head(title, desc) + '\n' + header(active) + '\n<main>\n' + render(body) + '\n</main>\n\n' + footer() + '\n<script src="js/site.js?v='+VER+'"></script>\n</body>\n</html>\n'
         (ROOT / f'{slug}.html').write_text(html)
         print('ok', slug, len(html))
 
