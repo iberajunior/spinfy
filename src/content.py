@@ -385,7 +385,7 @@ def quem_somos(g):
     I, H = g['icon'], g['phero']
     hero = H('Quem somos', 'Construímos as mesas onde <em class="o">empresários decidem.</em>',
              'Ao lado de conselheiros que já viveram seus desafios, para valorizar o negócio e conquistar novas opções.',
-             vid(8426041), poster(8426041), 'Quem somos', ctas=g['CTX']['call_hero'].replace('Agende uma conversa', 'Converse com o Marcelo'))
+             vid(8426041), poster(8426041), 'Quem somos', ctas=g['CTX']['call_hero'])
     vals = [('Ambição Estratégica', 'Pensar a empresa no horizonte de anos, e não da próxima urgência.'),
             ('Mentalidade de Equity', 'Cada decisão olha para o valor que a empresa constrói.'),
             ('Eficácia nos Contratos', 'Acordos claros, cumpridos e acompanhados.'),
@@ -417,7 +417,6 @@ def quem_somos(g):
   <div class="wrap guide-in">
     <div class="portrait rv-l">
       <div class="ph"><img src="img/marcelo-fonzaghi.jpg" alt="Marcelo Fonzaghi, CEO da Spinfy.co, em seu escritório" width="628" height="640"><div class="cap"><b>Marcelo Fonzaghi</b><span>CEO da Spinfy.co</span></div></div>
-      <div class="tag">{I('calendar')}Spinfy.co desde 2015</div>
     </div>
     <div class="rv" style="--d:.1s">
       <span class="eyebrow">Quem conduz</span>
@@ -429,7 +428,6 @@ def quem_somos(g):
         <div>{I('target')}<b>Assertividade</b></div>
         <div>{I('bulb')}<b>Sabedoria</b></div>
       </div>
-      {g['callbtn']('Converse com o Marcelo')}
     </div>
   </div>
 </section>
@@ -491,7 +489,7 @@ def quem_somos(g):
     </div>
   </div>
 </section>
-''' + g['close_block']('Respeitamos a sua trajetória, honramos o seu presente e <em class="o">construímos com você o seu amanhã.</em>', btn=g['callbtn']('Converse com o Marcelo'))
+''' + g['close_block']('Respeitamos a sua trajetória, honramos o seu presente e <em class="o">construímos com você o seu amanhã.</em>')
 
 
 def seja_conselheiro(g):
@@ -650,57 +648,70 @@ def faq(g):
 
 
 def contato(g):
-    I, H = g['icon'], g['phero']
-    hero = H('Contato e agendamento', 'Agende uma <em class="o">conversa.</em>',
-             'Uma conversa de 30 minutos com um conselheiro sênior. É o primeiro passo do diagnóstico, e o investimento é informado antes da confirmação.',
-             vid(7552616), poster(7552616), 'Contato',
-             ctas=f'<a class="btn" data-hero-cta href="#agendar">Escolher um horário {I("arrow")}</a><a class="btn ghost-lt" href="{g["WA"]}" target="_blank" rel="noopener">{I("whatsapp")}Prefiro o WhatsApp</a>')
-    slots = ''.join(f'<label><input type="radio" name="periodo" value="{v}"{" checked" if i == 0 else ""}><span>{v}</span></label>' for i, v in enumerate(['Manhã', 'Tarde', 'Fim do dia']))
-    return hero + f'''
+    I = g['icon']
+    WA = g['WA']
+    chans = [
+        ('phone', 'Telefone', '(41) 3021-8343', 'Ligue em horário comercial.', 'tel:+554130218343', ''),
+        ('whatsapp', 'WhatsApp', '(41) 9134-7696', 'Fale com a nossa equipe a qualquer momento.', WA, ' target="_blank" rel="noopener"'),
+        ('mail', 'E-mail', 'service@spinfy.co', 'Para propostas, documentos e parcerias.', 'mailto:service@spinfy.co', ''),
+        ('instagram', 'Instagram', '@spinfy.co', 'Acompanhe as novidades da Spinfy.co.', 'https://www.instagram.com/spinfy.co/', ' target="_blank" rel="noopener"'),
+        ('linkedin', 'LinkedIn', 'Spinfy.co', 'Artigos e conteúdos para empresários.', 'https://www.linkedin.com/company/spinfy/', ' target="_blank" rel="noopener"'),
+        ('lock', 'Plataforma', 'Acesso restrito', 'Área de clientes e conselheiros.', 'https://spinfy.app.br', ''),
+    ]
+    ch = ''.join(f'<a class="chan" href="{h}"{t}><span class="ic">{I(ic)}</span><span><small>{k}</small><b>{v}</b><em>{d}</em></span></a>' for ic, k, v, d, h, t in chans)
+    return f'''
+<section class="sec ctop">
+  <div class="wrap">
+    <nav class="crumb dk rv" aria-label="Você está em"><a href="index.html">Início</a><span>/</span><b>Contato</b></nav>
+    <div class="shead">
+      <div class="rv"><span class="eyebrow">Contato</span><h1 class="h2 rv-h" style="font-size:clamp(44px,5.4vw,76px)">Fale com <em class="o">a Spinfy.co.</em></h1></div>
+      <p class="lead rv" style="--d:.1s">Escolha o canal que preferir. Atendimento presencial em Curitiba, online em todo o Brasil e na sua empresa.</p>
+    </div>
+    <div class="chans stg">{ch}</div>
+  </div>
+</section>
+
 <section class="sec ivory" id="agendar">
   <div class="wrap book">
-    <form class="form rv" id="agendaForm" novalidate>
-      <span class="eyebrow">Agendamento</span>
+    <form class="form rv" id="mailForm" novalidate>
+      <span class="eyebrow">Envie uma mensagem</span>
       <h2>Conte um pouco sobre a sua empresa.</h2>
-      <p class="lead">Nossa equipe confirma o horário e informa o investimento antes da conversa.</p>
+      <p class="lead">A mensagem chega ao e-mail da nossa equipe, que responde em até um dia útil.</p>
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <div class="fg">
         <div class="field"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" autocomplete="name" required></div>
-        <div class="field"><label for="f-empresa">Empresa</label><input id="f-empresa" name="empresa" autocomplete="organization" required></div>
-        <div class="field"><label for="f-tel">Telefone ou WhatsApp</label><input id="f-tel" name="telefone" type="tel" autocomplete="tel" inputmode="tel" required></div>
-        <div class="field"><label for="f-fat">Faturamento anual</label><select id="f-fat" name="faturamento"><option>Até R$ 30 milhões</option><option selected>De R$ 30 a 100 milhões</option><option>Acima de R$ 100 milhões</option><option>Prefiro não informar</option></select></div>
-        <div class="field full"><label>Melhor período para a conversa</label><div class="slots">{slots}</div></div>
-        <div class="field full"><label for="f-msg">O que você gostaria de conversar? (opcional)</label><textarea id="f-msg" name="mensagem" placeholder="Por exemplo: sucessão, dívida, captação, venda..."></textarea></div>
+        <div class="field"><label for="f-empresa">Empresa</label><input id="f-empresa" name="empresa" autocomplete="organization"></div>
+        <div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-tel">Telefone ou WhatsApp</label><input id="f-tel" name="telefone" type="tel" autocomplete="tel" inputmode="tel"></div>
+        <div class="field"><label for="f-ass">Assunto</label><select id="f-ass" name="assunto"><option>Agendar uma conversa</option><option>Quero ser um conselheiro</option><option>Jornada Equity</option><option>Imprensa e parcerias</option><option>Outro assunto</option></select></div>
+        <div class="field"><label for="f-fat">Faturamento anual da empresa</label><select id="f-fat" name="faturamento"><option>Até R$ 30 milhões</option><option selected>De R$ 30 a 100 milhões</option><option>Acima de R$ 100 milhões</option><option>Prefiro não informar</option></select></div>
+        <div class="field full"><label for="f-msg">Mensagem</label><textarea id="f-msg" name="mensagem" required placeholder="Conte o que você gostaria de conversar."></textarea></div>
       </div>
       <div class="send">
-        <button class="btn" type="submit">Enviar pedido de agendamento {I('arrow')}</button>
-        <p class="fine">Ao enviar, abrimos o WhatsApp da Spinfy.co com os seus dados para a confirmação do horário.</p>
+        <button class="btn" type="submit">Enviar mensagem {I('arrow')}</button>
+        <p class="fine">Seus dados são usados apenas para responder ao seu contato.</p>
       </div>
-      <p class="ok" role="status">Pedido pronto. Se o WhatsApp não abrir, ligue para (41) 3021-8343.</p>
-      <span class="todo-in">[Na publicação, este formulário será integrado ao Google Agenda.]</span>
+      <p class="ok" role="status">Mensagem enviada. Em breve nossa equipe entra em contato.</p>
+      <p class="err" role="alert">Não foi possível enviar agora. Escreva para service@spinfy.co ou ligue para (41) 3021-8343.</p>
     </form>
     <div class="expect rv" style="--d:.1s">
-      <span class="eyebrow">O que esperar</span>
+      <span class="eyebrow">Agende uma conversa</span>
       <div class="tile"><span class="n">01</span><div class="ic">{I('clock')}</div><h3>30 minutos</h3><p>Uma conversa com um conselheiro sênior sobre o momento da sua empresa.</p></div>
-      <div class="tile"><span class="n">02</span><div class="ic">{I('prepare')}</div><h3>Primeiro passo do diagnóstico</h3><p>Você sai com uma visão clara do próximo passo e do pré-diagnóstico na plataforma.</p></div>
-      <div class="tile"><span class="n">03</span><div class="ic">{I('shield')}</div><h3>Sem surpresas</h3><p>O investimento é informado antes da confirmação. Tudo o que você contar fica em sigilo.</p></div>
-      <div class="mapcard">
-        <div class="mark" data-spin>{g['CTX']['mark']}</div>
-        <small>Onde estamos</small>
-        <b>Rua Ébano Pereira, 60, 21º andar, Centro, Curitiba/PR</b>
-        <p>CEP 80410-250 · Atendimento presencial, online e na sua empresa.</p>
-        <a class="tlink" href="https://www.google.com/maps/search/?api=1&query=Rua+%C3%89bano+Pereira+60+Curitiba" target="_blank" rel="noopener">Ver no mapa <span class="c">{I('arrow')}</span></a>
-      </div>
+      <div class="tile"><span class="n">02</span><div class="ic">{I('shield')}</div><h3>Sem surpresas</h3><p>É o primeiro passo do diagnóstico, e o investimento é informado antes da confirmação.</p></div>
+      <a class="btn" href="{WA}" target="_blank" rel="noopener" style="justify-content:center">{I('whatsapp')}Agendar pelo WhatsApp</a>
     </div>
   </div>
 </section>
 
-<section class="sec">
-  <div class="wrap">
-    <div class="cards3 stg">
-      <a class="tile" href="tel:+554130218343" style="text-decoration:none"><div class="ic">{I('phone')}</div><h3>(41) 3021-8343</h3><p>Ligue em horário comercial.</p></a>
-      <a class="tile" href="{g['WA']}" target="_blank" rel="noopener" style="text-decoration:none"><div class="ic">{I('whatsapp')}</div><h3>WhatsApp</h3><p>Fale com a nossa equipe a qualquer momento.</p></a>
-      <a class="tile" href="mailto:service@spinfy.co" style="text-decoration:none"><div class="ic">{g['icon']('mail')}</div><h3>service@spinfy.co</h3><p>Para propostas, documentos e parcerias.</p></a>
+<section class="sec" style="padding-top:clamp(64px,7vw,96px)">
+  <div class="wrap visit">
+    <div class="rv">
+      <span class="eyebrow">Onde estamos</span>
+      <h2 class="h2 rv-h">Rua Ébano Pereira, 60, <em class="o">21º andar.</em></h2>
+      <div class="prose"><p>Centro, Curitiba/PR, CEP 80410-250. Recebemos empresários com hora marcada e também vamos até a sua empresa.</p></div>
+      <a class="tlink" style="margin-top:28px" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+%C3%89bano+Pereira+60+Curitiba" target="_blank" rel="noopener">Abrir no Google Maps <span class="c">{I('arrow')}</span></a>
     </div>
+    <div class="map rv" style="--d:.1s"><iframe title="Mapa: Rua Ébano Pereira, 60, Curitiba" src="https://www.google.com/maps?q=Rua+%C3%89bano+Pereira,+60,+Centro,+Curitiba+PR&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
   </div>
 </section>
 '''

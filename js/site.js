@@ -2,6 +2,7 @@ document.documentElement.classList.add('js');
 (function(){
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   var top=document.getElementById('top');
+  var hasHero=!!document.querySelector('.hero');
   var marks=[].slice.call(document.querySelectorAll('[data-spin]'));
   var pars=[].slice.call(document.querySelectorAll('[data-par]'));
   var ticking=false;
@@ -9,7 +10,7 @@ document.documentElement.classList.add('js');
   tt.addEventListener('click',function(){scrollTo({top:0,behavior:reduce?'auto':'smooth'});});
   function frame(){
     var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
-    top.classList.toggle('solid',y>40);
+    top.classList.toggle('solid',y>40||!hasHero);
     top.style.setProperty('--prog',(h>0?y/h*100:0)+'%');
     tt.classList.toggle('show',y>innerHeight*.6);ring.style.strokeDashoffset=(176*(1-(h>0?y/h:0))).toFixed(1);
     if(!reduce){
@@ -36,16 +37,20 @@ document.documentElement.classList.add('js');
   document.querySelectorAll('.rv-h').forEach(function(h){var p=h.parentNode;p._h=h;ioh.observe(p);});
 
 
-  // Formulário de agendamento: monta a mensagem e abre o WhatsApp da Spinfy.co
-  var form=document.getElementById('agendaForm');
+  // Formulário de contato: envia por e-mail (FormSubmit) para service@spinfy.co
+  var form=document.getElementById('mailForm');
   if(form){form.addEventListener('submit',function(ev){ev.preventDefault();
-    var f=form.elements,miss=[].filter.call(form.querySelectorAll('[required]'),function(i){return !i.value.trim();});
-    if(miss.length){miss[0].focus();miss.forEach(function(i){i.style.borderColor='#C2541A';});return;}
-    var per=(form.querySelector('input[name=periodo]:checked')||{}).value||'';
-    var t='Olá! Quero agendar uma conversa com a Spinfy.co.\n\nNome: '+f.nome.value+'\nEmpresa: '+f.empresa.value+'\nTelefone: '+f.telefone.value+'\nFaturamento: '+f.faturamento.value+'\nMelhor período: '+per+(f.mensagem.value.trim()?'\nAssunto: '+f.mensagem.value.trim():'');
-    form.classList.add('sent');
-    window.open('https://wa.me/554191347696?text='+encodeURIComponent(t),'_blank','noopener');
+    var miss=[].filter.call(form.querySelectorAll('[required]'),function(i){return !i.value.trim()||(i.type==='email'&&!/^\S+@\S+\.\S+$/.test(i.value));});
+    form.querySelectorAll('[required]').forEach(function(i){i.style.borderColor='';});
+    if(miss.length){miss.forEach(function(i){i.style.borderColor='#C2541A';});miss[0].focus();return;}
+    var d={};[].forEach.call(form.elements,function(el){if(el.name)d[el.name]=el.value;});
+    d._subject='Contato pelo site: '+d.assunto+' ('+d.nome+')';d._replyto=d.email;d._template='table';
+    form.classList.remove('sent','fail');form.classList.add('busy');
+    fetch('https://formsubmit.co/ajax/service@spinfy.co',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
+      .then(function(r){return r.json();}).then(function(j){form.classList.remove('busy');if(j&&String(j.success)==='true'){form.classList.add('sent');form.reset();}else{form.classList.add('fail');}})
+      .catch(function(){form.classList.remove('busy');form.classList.add('fail');});
   });}
+
   var steps=[
     ['Situação','A situação econômica, financeira e operacional da empresa.'],
     ['Posicionamento','O posicionamento da empresa no mercado e as atitudes de quem a conduz.'],
