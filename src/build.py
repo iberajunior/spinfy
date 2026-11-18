@@ -65,7 +65,7 @@ def header(active):
     <nav class="nav" id="nav" aria-label="Menu principal">{nav}</nav>
     <a class="logo" href="index.html" aria-label="Spinfy.co, página inicial">{rd('_logo.html')}</a>
     <div class="right">
-      <a class="help" href="contato.html">Não sabe por onde começar?<b>Fale com um especialista</b></a>
+      <span class="help">Não sabe por onde começar?<b>Fale com um especialista</b></span>
       {callbtn()}
       <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">{icon('menu')}</button>
     </div>

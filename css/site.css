@@ -821,3 +821,4 @@ a.ccard:hover{background:rgba(255,255,255,.14);border-color:rgba(238,116,39,.6)}
 @media (max-width:1400px){.nav{gap:14px}.nav a{font-size:13.5px}}
 /* Botão do cabeçalho recolhe de verdade enquanto o do topo está visível (sem buraco no menu) */
 .top .right .btn.call{max-width:340px;transition:opacity .45s var(--ease),transform .45s var(--ease),max-width .55s var(--ease),margin .55s var(--ease),padding .55s var(--ease),box-shadow .4s var(--ease)}
+.help{cursor:default}
