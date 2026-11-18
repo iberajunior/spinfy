@@ -21,9 +21,6 @@ document.documentElement.classList.add('js');
   }
   addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(frame);ticking=true;}},{passive:true});frame();
 
-  var heroCta=document.querySelector('[data-hero-cta]'),mast=document.getElementById('top');
-  function ctaCheck(){if(!heroCta)return;mast.classList.toggle('cta-hide',(function(r){return r.bottom>70&&r.top<innerHeight;})(heroCta.getBoundingClientRect()));}
-  addEventListener('scroll',ctaCheck,{passive:true});addEventListener('resize',ctaCheck);ctaCheck();
   var b=document.getElementById('burger'),nav=document.getElementById('nav');
   b.addEventListener('click',function(){var o=nav.classList.toggle('open');b.setAttribute('aria-expanded',o);top.classList.add('solid');});
   var links=[].slice.call(nav.querySelectorAll('a[href^="#"]')).filter(function(a){return a.getAttribute('href').length>1;});

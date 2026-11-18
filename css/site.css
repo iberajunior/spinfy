@@ -525,7 +525,6 @@ a.ccard:hover{background:rgba(255,255,255,.14);border-color:rgba(238,116,39,.6)}
   .vs-img{aspect-ratio:auto;height:100%;min-height:560px}
 }
 .top .right .btn.call{transition:opacity .45s var(--ease),transform .45s var(--ease),box-shadow .4s var(--ease)}
-.mast.cta-hide .top .right .btn.call{opacity:0;transform:translateY(-8px);pointer-events:none}
 
 /* ============ Páginas internas ============ */
 .phero{min-height:78vh;min-height:78svh}
@@ -822,4 +821,3 @@ a.ccard:hover{background:rgba(255,255,255,.14);border-color:rgba(238,116,39,.6)}
 @media (max-width:1400px){.nav{gap:14px}.nav a{font-size:13.5px}}
 /* Botão do cabeçalho recolhe de verdade enquanto o do topo está visível (sem buraco no menu) */
 .top .right .btn.call{max-width:340px;transition:opacity .45s var(--ease),transform .45s var(--ease),max-width .55s var(--ease),margin .55s var(--ease),padding .55s var(--ease),box-shadow .4s var(--ease)}
-.mast.cta-hide .top .right .btn.call{max-width:0;padding-left:0;padding-right:0;margin-left:-22px}
