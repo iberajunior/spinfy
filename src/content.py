@@ -186,7 +186,7 @@ def para_empresarios(g):
         <div class="cmp-row" role="row"><div role="columnheader"></div><div role="columnheader">Consultor</div><div role="columnheader">Conselheiro</div></div>
         <div class="cmp-row" role="row"><div role="rowheader">O que faz</div><div role="cell">Faz um diagnóstico e entrega um relatório.</div><div role="cell">Senta com você à mesa e ajuda a decidir.</div></div>
         <div class="cmp-row" role="row"><div role="rowheader">Por quanto tempo</div><div role="cell">Encerra o trabalho com a entrega.</div><div role="cell">Orienta ao longo do tempo, com encontros mensais.</div></div>
-        <div class="cmp-row" role="row"><div role="rowheader">Quem decide</div><div role="cell">Recomenda o caminho.</div><div role="cell">Você. O conselheiro amplia o que você enxerga antes de cada decisão.</div></div>
+        <div class="cmp-row" role="row"><div role="rowheader">Quem decide</div><div role="cell">Recomenda o caminho.</div><div role="cell">O conselheiro amplia o que você enxerga antes de cada decisão.</div></div>
       </div>
       <p class="pull">Não chegamos com um destino pronto. O futuro da sua empresa é desenhado à mesa, com você.</p>
     </div>
