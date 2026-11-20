@@ -822,3 +822,6 @@ a.ccard:hover{background:rgba(255,255,255,.14);border-color:rgba(238,116,39,.6)}
 /* Botão do cabeçalho recolhe de verdade enquanto o do topo está visível (sem buraco no menu) */
 .top .right .btn.call{max-width:340px;transition:opacity .45s var(--ease),transform .45s var(--ease),max-width .55s var(--ease),margin .55s var(--ease),padding .55s var(--ease),box-shadow .4s var(--ease)}
 .help{cursor:default}
+.guide .bio{margin:6px 0 30px}
+.guide .bio p{font-size:17px;line-height:1.65;color:var(--muted)}
+.guide .bio .bioq{font-family:var(--serif,Georgia,serif);font-style:italic;font-size:19px;color:var(--navy);border-left:3px solid var(--orange);padding-left:16px;margin-top:14px}

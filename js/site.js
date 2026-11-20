@@ -14,7 +14,7 @@ document.documentElement.classList.add('js');
     top.style.setProperty('--prog',(h>0?y/h*100:0)+'%');
     tt.classList.toggle('show',y>innerHeight*.6);ring.style.strokeDashoffset=(176*(1-(h>0?y/h:0))).toFixed(1);
     if(!reduce){
-      marks.forEach(function(m){var r=m.getBoundingClientRect();if(r.bottom<-200||r.top>innerHeight+200)return;m.style.transform='rotate('+(y*0.04)+'deg)';});
+      marks.forEach(function(m){var r=m.getBoundingClientRect();if(r.bottom<-200||r.top>innerHeight+200)return;var d=(r.top+r.height/2-innerHeight/2)*0.025;d=Math.max(-14,Math.min(14,d));m.style.transform='rotate('+d.toFixed(2)+'deg)';});
       pars.forEach(function(el){var r=el.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;var k=parseFloat(el.dataset.par)||.08;var p=(r.top+r.height/2-innerHeight/2);el.style.transform='translate3d(0,'+(p*-k)+'px,0) scale(1.08)';});
     }
     ticking=false;

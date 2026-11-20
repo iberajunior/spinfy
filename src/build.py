@@ -65,7 +65,7 @@ def header(active):
     <nav class="nav" id="nav" aria-label="Menu principal">{nav}</nav>
     <a class="logo" href="index.html" aria-label="Spinfy.co, página inicial">{rd('_logo.html')}</a>
     <div class="right">
-      <span class="help">Não sabe por onde começar?<b>Fale com um especialista</b></span>
+      <span class="help">Não sabe por onde começar?<b>Fale com um conselheiro</b></span>
       {callbtn()}
       <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">{icon('menu')}</button>
     </div>
@@ -169,7 +169,7 @@ def render(text):
     return text
 
 PAGES = [
-    ('index', 'Spinfy.co · Conselho entre pares para empresas médias', 'Na Spinfy.co, o empresário senta à mesa com conselheiros que conhecem seus desafios, ganha uma agenda estratégica, depende menos de dívida e passa a ter mais opções: captar, se associar, vender, investir ou se tornar conselheiro também.', None),
+    ('index', 'Spinfy.co · Conselho entre pares para empresas médias', 'Na Spinfy.co, o empresário senta à mesa com conselheiros que conhecem seus desafios, ganha uma agenda estratégica, depende menos de dívida e passa a ter mais opções: adquirir, captar, se associar, vender ou se tornar conselheiro também.', None),
     ('para-empresarios', 'Para empresários · Spinfy.co', 'A jornada da Spinfy.co para o empresário fundador: pré-diagnóstico, estruturação estratégica em 90 dias, 9 meses de aconselhamento e o Sistema 7SS.', 'para-empresarios'),
     ('jornada-equity', 'Jornada Equity · Spinfy.co', 'A Jornada Equity é a porta de entrada para executivos, advisors e conselheiros que querem valorizar a própria experiência e atuar na rede Spinfy.co.', None),
     ('casos', 'Casos de sucesso · Spinfy.co', 'Empresas que passaram pela mesa da Spinfy.co: 240 empresários aconselhados, 57 intermediações de captação e M&A e R$ 310 milhões transacionados.', 'casos'),

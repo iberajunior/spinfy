@@ -129,7 +129,7 @@ def para_empresarios(g):
   <div class="wrap duo rev">
     <div class="rv" style="--d:.1s">
       <span class="eyebrow">Conselheiro em 9 meses</span>
-      <h2 class="h2 rv-h">Sentar do <em class="o">outro lado da mesa.</em></h2>
+      <h2 class="h2 rv-h">Sentar em outra <em class="o">cadeira da mesa.</em></h2>
       <div class="prose">
         <p>Ao fim dos 9 meses de aconselhamento, você pode delegar o papel executivo e ocupar a cadeira do conselho da sua própria empresa.</p>
         <p>Se quiser, também pode aconselhar outras empresas. É uma forma de diluir o risco, ampliar a experiência e colocar em uso o que você levou décadas para aprender.</p>
@@ -335,7 +335,7 @@ def casos(g):
       <p class="lead rv" style="--d:.1s">Dois exemplos de como o conselho muda a conversa dentro de empresas familiares.</p>
     </div>
     <article class="cased rv">
-      <div class="im"><img src="{img('photo-1714974528737-3e6c7e4d11af')}" alt="Sócios de uma empresa familiar reunidos" loading="lazy"><span class="sector">{I('factory')}Indústria de produtos para construção</span></div>
+      <div class="im"><img src="https://images.pexels.com/photos/8428061/pexels-photo-8428061.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Sócios e conselheiros experientes reunidos à mesa" loading="lazy"><span class="sector">{I('factory')}Indústria de produtos para construção</span></div>
       <div class="bd">
         <span class="eyebrow">Caso 01</span>
         <h3>Da segunda para a terceira geração, com o conselho no meio.</h3>
@@ -348,7 +348,7 @@ def casos(g):
       </div>
     </article>
     <article class="cased rev rv">
-      <div class="im"><img src="{img('photo-1714974528757-f63c72154a1b')}" alt="Família empresária conversando à mesa" loading="lazy"><span class="sector">{I('tree')}Madeireira de compensados</span></div>
+      <div class="im"><img src="https://images.pexels.com/photos/7434021/pexels-photo-7434021.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Familiares e conselheiros seniores à mesa de reunião" loading="lazy"><span class="sector">{I('tree')}Madeireira de compensados</span></div>
       <div class="bd">
         <span class="eyebrow">Caso 02</span>
         <h3>Quando a família decide seguir caminhos diferentes.</h3>
@@ -394,7 +394,7 @@ def quem_somos(g):
             ('Rede de Confiança', 'Conselheiros com reputação e resultados próprios.'),
             ('Companhia Estratégica', 'Ninguém precisa decidir sozinho.')]
     vt = ''.join(f'<div class="value"><span class="n">0{i+1}</span><b>{a}</b><span>{b}</span></div>' for i, (a, b) in enumerate(vals))
-    vt += f'<div class="value dk"><span class="n">7SS</span><b>A empresa gira e todos ganham.</b><span>Company Spins, Everyone Wins.</span></div>'
+    vt += f'<div class="value dk"><span class="n">7SS</span><b>Método Estruturante</b><span>Para decisões baseadas em dados, pessoas e processos.</span></div>'
     return hero + f'''
 <!-- MANIFESTO -->
 <section class="band" aria-label="Manifesto">
@@ -407,7 +407,6 @@ def quem_somos(g):
       <p>Nossas mesas reúnem conselheiros, método próprio e inteligência artificial imparcial. <em>Não chegamos com um destino pronto.</em></p>
       <p>Respeitamos a sua trajetória, honramos o seu presente e construímos com você o seu amanhã.</p>
       <cite>A Mesa do Empresário · Manifesto Spinfy.co</cite>
-      <span class="todo-in" style="margin-top:26px">[Versão resumida com as frases oficiais. Conferir com o texto completo do manifesto.]</span>
     </div>
   </div>
 </section>
@@ -422,7 +421,7 @@ def quem_somos(g):
       <span class="eyebrow">Quem conduz</span>
       <h2 class="h2 rv-h">Há 18 anos <em class="o">estruturando estratégias de sucesso.</em></h2>
       <div class="sign"><span class="bar"></span><div><b>Marcelo Fonzaghi</b><span>CEO da Spinfy.co</span></div></div>
-      <p class="todo">[Bio do Marcelo, com trajetória, aparições e associações. Texto a receber.]</p>
+      <div class="prose bio"><p>Empresário há mais de 30 anos, engenheiro civil pela UFPR, estrategista pela FGV e conselheiro empresarial. Lidera times de estruturação estratégica, governança e gestão de conselhos consultivos.</p><p class="bioq">“Atuo com o propósito de construir mesas onde a experiência orienta decisões de valor.”</p></div>
       <div class="pillars stg">
         <div>{I('books')}<b>Conhecimento</b></div>
         <div>{I('target')}<b>Assertividade</b></div>
@@ -478,9 +477,9 @@ def quem_somos(g):
         <span class="eyebrow lt">A rede de conselheiros</span>
         <h2 class="h2 rv-h">Conselheiros que <em class="o">já sentaram na sua cadeira.</em></h2>
         <ul>
-          <li>{I('brief')}Empresários e executivos com resultados pessoais sólidos</li>
-          <li>{I('scales')}Profissionais de finanças, contabilidade e jurídico</li>
-          <li>{I('grad')}Formados no Sistema 7SS, em duas partes: Start e Método</li>
+          <li>{I('brief')}Executivos seniores com resultados pessoais sólidos</li>
+          <li>{I('scales')}Profissionais generalistas de finanças, auditoria e jurídico</li>
+          <li>{I('grad')}Empresários de sucesso com aptidão ao aconselhamento</li>
         </ul>
         <div class="ctas"><a class="btn" href="seja-conselheiro.html">Seja um conselheiro {I('arrow')}</a></div>
         <p class="motto">A empresa gira e todos ganham.</p>
@@ -613,7 +612,7 @@ def faq(g):
             q('Como começa o trabalho?', '<p>Com uma conversa de 30 minutos com um conselheiro sênior. Ela é o primeiro passo do diagnóstico, e o investimento é informado antes da confirmação.</p><p>Depois vem o pré-diagnóstico, feito a partir do cadastro da empresa na plataforma, em cerca de 10 dias.</p>'),
             q('Quanto tempo leva?', '<p>A estruturação estratégica leva 90 dias. Em seguida vêm 9 meses de aconselhamento, com encontros a cada três meses e um relatório do conselho (Board Pack) desde o início.</p>'),
             q('O que significa "Conselheiro em 9 meses"?', '<p>Ao fim dos 9 meses, você pode delegar o papel executivo e ocupar a cadeira do conselho da sua própria empresa, com mais tempo para a estratégia. Se quiser, também pode aconselhar outras empresas.</p>'),
-            q('Preciso vender a minha empresa?', '<p>Não. Vender, captar, trazer um sócio ou investir são opções, não obrigações. Não chegamos com um destino pronto: o futuro da sua empresa é desenhado à mesa, com você.</p>'),
+            q('Preciso vender a minha empresa?', '<p>Não. Vender, captar, trazer um sócio ou adquirir outras empresas são opções, não obrigações. Não chegamos com um destino pronto: o futuro da sua empresa é desenhado à mesa, com você.</p>'),
         ]),
         ('metodo', 'ai', 'Sobre o método e a IA', [
             q('O que é o Sistema 7SS?', '<p>É o nosso método, com 7 etapas que formam o nome da marca: Situação, Posicionamento, Indicadores, Negligências, Forecast, Yield e Conselho aos objetivos. O e-book Bússola do Equity explica cada uma.</p><p><a class="tlink" href="para-empresarios.html#sistema-7ss">Veja as 7 etapas <span class="c">' + g['icon']('arrow') + '</span></a></p>'),
