@@ -98,7 +98,7 @@ def para_empresarios(g):
       </article>
       <article class="jstep">
         <span class="num">02</span>
-        <div><span class="t">9 meses</span><h3>Valorize</h3><p>Os conselheiros passam a sentar com você a cada três meses para acompanhar e ajustar o rumo.</p></div>
+        <div><span class="t">9 meses</span><h3>Valorize</h3><p>Os conselheiros passam a sentar com você mensalmente para aconselhar e ajustar o rumo.</p></div>
         <div><span class="k">O que acontece</span><ul>
           <li>{I('check')}Planejamento, plano de negócio e governança.</li>
           <li>{I('check')}Relatório do conselho (Board Pack) desde o primeiro encontro.</li>
@@ -186,7 +186,7 @@ def para_empresarios(g):
         <div class="cmp-row" role="row"><div role="columnheader"></div><div role="columnheader">Consultor</div><div role="columnheader">Conselheiro</div></div>
         <div class="cmp-row" role="row"><div role="rowheader">O que faz</div><div role="cell">Faz um diagnóstico e entrega um relatório.</div><div role="cell">Senta com você à mesa e ajuda a decidir.</div></div>
         <div class="cmp-row" role="row"><div role="rowheader">Por quanto tempo</div><div role="cell">Encerra o trabalho com a entrega.</div><div role="cell">Orienta ao longo do tempo, com encontros mensais.</div></div>
-        <div class="cmp-row" role="row"><div role="rowheader">Quem decide</div><div role="cell">Recomenda o caminho.</div><div role="cell">O conselheiro amplia o que você enxerga antes de cada decisão.</div></div>
+        <div class="cmp-row" role="row"><div role="rowheader">Quem decide</div><div role="cell">Recomenda o caminho.</div><div role="cell">Afasta os riscos e amplia o que você enxerga antes de cada decisão.</div></div>
       </div>
       <p class="pull">Não chegamos com um destino pronto. O futuro da sua empresa é desenhado à mesa, com você.</p>
     </div>
@@ -199,16 +199,16 @@ def para_empresarios(g):
     <div class="rv">
       <span class="eyebrow">Como cobramos</span>
       <h2 class="h2 rv-h">Um modelo <em class="o">simples e transparente.</em></h2>
-      <div class="prose"><p>O trabalho é remunerado por uma mensalidade fixa e, nas operações de captação e venda, por uma comissão abaixo da média do mercado. Os valores são apresentados na conversa inicial, antes de qualquer compromisso.</p></div>
+      <div class="prose"><p>O trabalho é remunerado por uma mensalidade fixa e, nas operações de captação e venda, por uma comissão abaixo da média do mercado. Os valores são apresentados nas conversas iniciais, antes de qualquer compromisso.</p></div>
       <div class="price">
-        <div><small>Aconselhamento</small><b>Mensalidade fixa</b><p>O retainer cobre a estruturação e os encontros do conselho.</p></div>
+        <div><small>Aconselhamento</small><b>Mensalidade fixa</b><p>Cobre a estruturação e os encontros do conselho.</p></div>
         <div><small>Operações</small><b>Comissão abaixo do mercado</b><p>Só quando há captação, venda ou associação.</p></div>
       </div>
     </div>
     <div class="rv" style="--d:.1s">
       <div class="expect">
         <div class="tile"><div class="ic">{I('calendar')}</div><h3>Primeiro passo: uma conversa</h3><p>30 minutos com um conselheiro sênior. É o primeiro passo do diagnóstico, e o investimento é informado antes da confirmação.</p></div>
-        <div class="tile"><div class="ic">{g['icon']('shield')}</div><h3>Sem destino pronto</h3><p>Vender ou captar são opções. Ninguém é levado a uma operação que não quer fazer.</p></div>
+        <div class="tile"><div class="ic">{g['icon']('shield')}</div><h3>Sem destino pronto</h3><p>Vender ou captar são opções eventuais. Ninguém é levado a uma operação inoportuna ou que não quer fazer.</p></div>
       </div>
     </div>
   </div>
@@ -368,12 +368,10 @@ def casos(g):
   <div class="wrap">
     <div class="shead">
       <div class="rv"><span class="eyebrow">Depoimentos</span><h2 class="h2 rv-h">Na palavra de <em class="o">quem sentou à mesa.</em></h2></div>
-      <p class="lead rv" style="--d:.1s">Este espaço recebe depoimentos de empresários com nome e foto, assim que forem autorizados.</p>
+      <p class="lead rv" style="--d:.1s">Avaliações publicadas no Google por quem trabalha com a Spinfy.co. Nota 5,0. <a class="glink" href="https://maps.google.com/?cid=17158798086183392932" target="_blank" rel="noopener">Ver todas no Google</a></p>
     </div>
     <div class="quotes stg">
-      <div class="qcard">{I('quote')}<p>[Depoimento de empresário a receber.]</p><div class="who2"><i></i><div><b>Nome do empresário</b><span>Cargo e setor</span></div></div></div>
-      <div class="qcard">{I('quote')}<p>[Depoimento de empresário a receber.]</p><div class="who2"><i></i><div><b>Nome do empresário</b><span>Cargo e setor</span></div></div></div>
-      <div class="qcard">{I('quote')}<p>[Depoimento de empresário a receber.]</p><div class="who2"><i></i><div><b>Nome do empresário</b><span>Cargo e setor</span></div></div></div>
+      <div class="qcard g">{I('quote')}<p>Trabalhar com a Spinfy.co é um divisor de águas. Eles possuem um domínio técnico impressionante sobre estruturação financeira e societária, o que nos traz muita clareza estratégica.</p><div class="who2"><i>AA</i><div><b>Alessandro Augusto</b><span>Avaliação 5 estrelas no Google</span></div></div></div><div class="qcard g">{I('quote')}<p>Uma empresa séria e com experiência no mercado, atuando com competência desde a estruturação estratégica e governança (como a formação de Conselhos Consultivos) até a intermediação técnica para captação de grandes investimentos ou venda parcial ou total do ativo.</p><div class="who2"><i>RG</i><div><b>Ricardo G. Anders</b><span>Avaliação 5 estrelas no Google</span></div></div></div><div class="qcard g">{I('quote')}<p>Excelente empresa de venda e captação em M&amp;A. Recomendo para quem quer realizar desde uma estruturação até a preparação da venda da sua empresa.</p><div class="who2"><i>TA</i><div><b>Thayson Ackler</b><span>Avaliação 5 estrelas no Google</span></div></div></div>
     </div>
   </div>
 </section>
@@ -495,7 +493,7 @@ def seja_conselheiro(g):
     I, H = g['icon'], g['phero']
     hero = H('Seja um conselheiro', 'Sua experiência pode <em class="o">ajudar outras empresas.</em>',
              'Entre para a rede de conselheiros da Spinfy.co, os Spinners, e aconselhe empresários de médias empresas com método e plataforma próprios.',
-             vid(8123986, 30), poster(8123986, 'adult-age-aging-aging-active'), 'Seja um conselheiro',
+             vid(8124004, 30), poster(8124004, 'adult-age-aging-aging-active'), 'Seja um conselheiro',
              ctas=f'<a class="btn" data-hero-cta href="#entrar">Quero ser um Spinner {I("arrow")}</a><a class="tlink" href="jornada-equity.html" style="color:#fff">Conheça a Jornada Equity <span class="c">{I("arrow")}</span></a>')
     return hero + f'''
 <!-- PARA QUEM -->
@@ -504,13 +502,14 @@ def seja_conselheiro(g):
     <div class="rv">
       <span class="eyebrow">Para quem é</span>
       <h2 class="h2 rv-h">Para quem já <em class="o">construiu resultados</em> e quer multiplicá-los.</h2>
-      <div class="prose"><p>Os Spinners são empresários, executivos e profissionais técnicos que levam a própria experiência para a mesa de outras empresas. A entrada na rede não tem taxa nem comissão.</p></div>
+      <div class="prose"><p>Os Spinners são empresários, executivos e profissionais técnicos que levam a própria experiência para a mesa de outras empresas. A entrada na rede começa pela Jornada Equity.</p></div>
       <ul class="ticks">
         <li>{I('checkcircle')}Executivos e empresários com experiência sólida.</li>
         <li>{I('checkcircle')}Empresários de sucesso no seu segmento, aconselhando outras empresas.</li>
         <li>{I('checkcircle')}Profissionais de finanças, contabilidade e jurídico.</li>
         <li>{I('checkcircle')}Conselheiros que já atendem empresas.</li>
       </ul>
+      <a class="btn" href="jornada-equity.html" style="margin-top:30px">Conheça a Jornada Equity {I('arrow')}</a>
     </div>
     <div class="img rv-img"><img src="{img('photo-1685375421073-4dae366f8e84',1000)}" alt="Empresário experiente, sorridente, sentado em uma poltrona no escritório" loading="lazy" style="object-position:50% 25%"><div class="cap2">{I('users')}A empresa gira e todos ganham.</div></div>
   </div>
@@ -524,9 +523,9 @@ def seja_conselheiro(g):
       <p class="lead rv" style="--d:.1s">O conselheiro não executa pelo empresário. Ele amplia o que o empresário enxerga antes de cada decisão.</p>
     </div>
     <div class="cards3 stg">
-      <div class="tile"><span class="n">01</span><div class="ic">{I('chair')}</div><h3>Aconselha</h3><p>Participa dos encontros do conselho, a cada três meses, com o apoio do Board Pack.</p></div>
-      <div class="tile"><span class="n">02</span><div class="ic">{I('coins')}</div><h3>Estrutura captações</h3><p>Ajuda a preparar a empresa para buscar capital com investidores.</p></div>
-      <div class="tile"><span class="n">03</span><div class="ic">{I('handshake')}</div><h3>Intermedeia operações</h3><p>Apoia fusões, aquisições e a entrada de novos sócios.</p></div>
+      <div class="tile"><span class="n">01</span><div class="ic">{I('detail')}</div><h3>Diagnostica</h3><p>Entende o que o empresário precisa, com dados e leitura de pessoas e processos.</p></div>
+      <div class="tile"><span class="n">02</span><div class="ic">{I('prepare')}</div><h3>Estrutura</h3><p>Apoia o empresário na elaboração da sua estratégia para chegar aos objetivos.</p></div>
+      <div class="tile"><span class="n">03</span><div class="ic">{I('chair')}</div><h3>Aconselha</h3><p>Na jornada, com planejamento e indicadores, visando mais opções para a decisão.</p></div>
     </div>
   </div>
 </section>
@@ -562,18 +561,18 @@ def seja_conselheiro(g):
   <div class="wrap">
     <div class="shead">
       <div class="rv"><span class="eyebrow">Como entrar</span><h2 class="h2 rv-h">Quatro passos até <em class="o">a sua primeira mesa.</em></h2></div>
-      <p class="lead rv" style="--d:.1s">Sem taxa de entrada e sem comissão para fazer parte da rede.</p>
+      <p class="lead rv" style="--d:.1s">A rede funciona no modelo de microfranquia, com taxa de associação e mensalidade.</p>
     </div>
     <div class="timeline stg">
-      <div class="tl"><b>Cadastro</b><p>Você conta a sua trajetória e a sua área de experiência.</p></div>
-      <div class="tl"><b>Formação</b><p>Start e Método, no Sistema 7SS.</p></div>
+      <div class="tl"><b>Jornada Equity</b><p>O primeiro passo para conhecer o seu potencial como conselheiro.</p></div>
+      <div class="tl"><b>Spinn Morning</b><p>Encontro para alinhamento e apresentação do negócio.</p></div>
       <div class="tl"><b>Associação</b><p>A entrada formal na rede de Spinners.</p></div>
       <div class="tl"><b>Atuação</b><p>As primeiras mesas, com acompanhamento.</p></div>
     </div>
     <div class="strip rv" style="margin-top:56px">
       <div class="mark" data-spin>{g['CTX']['mark']}</div>
       <p>A empresa gira e <em>todos ganham.</em></p>
-      <a class="btn" href="{g['WA']}" target="_blank" rel="noopener">Quero ser um Spinner {I('arrow')}</a>
+      <a class="btn" href="jornada-equity.html">Inicie sua Jornada agora {I('arrow')}</a>
     </div>
   </div>
 </section>
@@ -581,7 +580,7 @@ def seja_conselheiro(g):
 <!-- DEPOIMENTO E VISÃO -->
 <section class="sec ivory">
   <div class="wrap duo">
-    <div class="qcard rv" style="background:var(--white)">{I('quote')}<p>[Depoimento de um Spinner associado a receber.]</p><div class="who2"><i></i><div><b>Nome do conselheiro</b><span>Spinner da rede Spinfy.co</span></div></div></div>
+    <div class="qcard rv" style="background:var(--white)">{I('quote')}<p>Sou associada há mais de um ano nesta maravilhosa empresa, que me trouxe (e ainda traz) várias oportunidades excelentes de negócios! Seriedade, profissionalismo e muita competência.</p><div class="who2"><i>LF</i><div><b>Luciana Fernandes</b><span>Spinner da rede Spinfy.co</span></div></div></div>
     <div class="rv" style="--d:.1s">
       <span class="eyebrow">Para onde vamos</span>
       <h2 class="h2 rv-h">17 empresas valendo <em class="o">R$ 1 bilhão</em> até 2032.</h2>
@@ -603,14 +602,14 @@ def faq(g):
         return f'<details{" open" if open_ else ""}><summary>{t}<span class="pm">{g["icon"]("plus")}</span></summary><div class="ans">{a}</div></details>'
     groups = [
         ('conselho', 'chair', 'Sobre o conselho', [
-            q('Qual é a diferença entre um conselheiro e um consultor?', '<p>O consultor faz um diagnóstico, entrega um relatório e encerra o trabalho. O conselheiro acompanha você ao longo do tempo, senta à mesa a cada três meses e ajuda a decidir.</p><p>Ele não executa e não decide por você. Amplia o que você enxerga antes de cada decisão.</p>', True),
+            q('Qual é a diferença entre um conselheiro e um consultor?', '<p>O consultor faz um diagnóstico, entrega um relatório e encerra o trabalho. O conselheiro acompanha você ao longo do tempo, senta à mesa todo mês e ajuda a decidir.</p><p>Ele não executa e não decide por você. Amplia o que você enxerga antes de cada decisão.</p>', True),
             q('Para que tipo de empresa a Spinfy.co é indicada?', '<p>Para empresas médias conduzidas pelo fundador ou em passagem entre gerações. A maioria dos nossos clientes fatura entre R$ 30 e 100 milhões por ano.</p>'),
             q('Quem são os conselheiros?', '<p>Empresários e executivos com resultados pessoais sólidos e reputação ilibada, formados no Sistema 7SS. À frente está Marcelo Fonzaghi, há 18 anos estruturando estratégias de sucesso.</p>'),
             q('Meus sócios e meus filhos participam?', '<p>Sim. Muitas das empresas que atendemos são familiares e estão na passagem entre gerações. Envolver sócios e sucessores faz parte do processo. <span class="tbc">a confirmar</span></p>'),
         ]),
         ('jornada', 'clock', 'Sobre a jornada', [
             q('Como começa o trabalho?', '<p>Com uma conversa de 30 minutos com um conselheiro sênior. Ela é o primeiro passo do diagnóstico, e o investimento é informado antes da confirmação.</p><p>Depois vem o pré-diagnóstico, feito a partir do cadastro da empresa na plataforma, em cerca de 10 dias.</p>'),
-            q('Quanto tempo leva?', '<p>A estruturação estratégica leva 90 dias. Em seguida vêm 9 meses de aconselhamento, com encontros a cada três meses e um relatório do conselho (Board Pack) desde o início.</p>'),
+            q('Quanto tempo leva?', '<p>A estruturação estratégica leva 90 dias. Em seguida vêm 9 meses de aconselhamento, com encontros mensais e um relatório do conselho (Board Pack) desde o início.</p>'),
             q('O que significa "Conselheiro em 9 meses"?', '<p>Ao fim dos 9 meses, você pode delegar o papel executivo e ocupar a cadeira do conselho da sua própria empresa, com mais tempo para a estratégia. Se quiser, também pode aconselhar outras empresas.</p>'),
             q('Preciso vender a minha empresa?', '<p>Não. Vender, captar, trazer um sócio ou adquirir outras empresas são opções, não obrigações. Não chegamos com um destino pronto: o futuro da sua empresa é desenhado à mesa, com você.</p>'),
         ]),
@@ -619,7 +618,7 @@ def faq(g):
             q('Como a inteligência artificial participa?', '<p>Cada etapa do Sistema 7SS é analisada por um colegiado de IA inspirado nas maiores referências do mercado. Na etapa final, o Marcellus, nosso conselheiro de IA, cruza essas análises e sugere caminhos. A decisão é sempre sua, com os conselheiros.</p>'),
         ]),
         ('cobranca', 'shield', 'Cobrança, sigilo e atendimento', [
-            q('Como vocês cobram?', '<p>Trabalhamos com uma mensalidade fixa (retainer) e comissão nas operações de captação e venda, abaixo da média do mercado. Os valores são apresentados na conversa inicial.</p>'),
+            q('Como vocês cobram?', '<p>Trabalhamos com uma mensalidade fixa (retainer) e comissão nas operações de captação e venda, abaixo da média do mercado. Os valores são apresentados nas conversas iniciais.</p>'),
             q('As informações da minha empresa ficam em sigilo?', '<p>Sim. Os nomes das empresas atendidas não são divulgados, e os casos do site são apresentados de forma anônima. <span class="tbc">a confirmar como é formalizado</span></p>'),
             q('Vocês atendem fora de Curitiba?', '<p>Sim. Atendemos presencialmente em Curitiba, online em todo o Brasil e com visitas à empresa quando necessário.</p>'),
         ]),

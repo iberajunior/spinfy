@@ -829,3 +829,8 @@ a.ccard:hover{background:rgba(255,255,255,.14);border-color:rgba(238,116,39,.6)}
 #quem-conduz .h2{margin-top:-.08em}
 .case .im img.flip,.cased .im img.flip{transform:scaleX(-1)}
 .case:hover .im img.flip{transform:scaleX(-1) scale(1.05)}
+.qcard.g,.qcard:has(.who2 i:not(:empty)){border-style:solid;border-color:rgba(41,35,92,.1)}
+.qcard .who2 i:not(:empty){display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:700;font-size:15px;letter-spacing:.04em;color:var(--navy)}
+.qcard.g p{font-size:20px}
+.glink{color:var(--orange-dk);font-weight:600;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.tl b{font-size:clamp(28px,2.6vw,40px)}
