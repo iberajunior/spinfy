@@ -825,3 +825,7 @@ a.ccard:hover{background:rgba(255,255,255,.14);border-color:rgba(238,116,39,.6)}
 .guide .bio{margin:6px 0 30px}
 .guide .bio p{font-size:17px;line-height:1.65;color:var(--muted)}
 .guide .bio .bioq{font-family:var(--serif,Georgia,serif);font-style:italic;font-size:19px;color:var(--navy);border-left:3px solid var(--orange);padding-left:16px;margin-top:14px}
+#quem-conduz .guide-in{align-items:start}
+#quem-conduz .h2{margin-top:-.08em}
+.case .im img.flip,.cased .im img.flip{transform:scaleX(-1)}
+.case:hover .im img.flip{transform:scaleX(-1) scale(1.05)}

@@ -335,7 +335,7 @@ def casos(g):
       <p class="lead rv" style="--d:.1s">Dois exemplos de como o conselho muda a conversa dentro de empresas familiares.</p>
     </div>
     <article class="cased rv">
-      <div class="im"><img src="https://images.pexels.com/photos/8428061/pexels-photo-8428061.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Sócios e conselheiros experientes reunidos à mesa" loading="lazy"><span class="sector">{I('factory')}Indústria de produtos para construção</span></div>
+      <div class="im"><img src="https://images.pexels.com/photos/8428061/pexels-photo-8428061.jpeg?auto=compress&cs=tinysrgb&w=1100" class="flip" alt="Sócios e conselheiros experientes reunidos à mesa" loading="lazy"><span class="sector">{I('factory')}Indústria de produtos para construção</span></div>
       <div class="bd">
         <span class="eyebrow">Caso 01</span>
         <h3>Da segunda para a terceira geração, com o conselho no meio.</h3>
